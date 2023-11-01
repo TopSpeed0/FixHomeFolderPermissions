@@ -29,8 +29,9 @@ install-Module importExcel
 Download the repository and work form the Directory.
 you can Download the repository from: [link text](https://github.com/TopSpeed0/FixHomeFolderPermissions.git)
 
- -or gh repo clone TopSpeed0/FixHomeFolderPermissions
- -or git clone https://github.com/TopSpeed0/FixHomeFolderPermissions.git
+# Copy repository
+gh repo clone TopSpeed0/FixHomeFolderPermissions
+git clone https://github.com/TopSpeed0/FixHomeFolderPermissions.git
 
 ## Usage
 To use the script, follow these steps:
