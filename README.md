@@ -46,7 +46,7 @@ To use the script, follow these steps:
 in .\Invoke-HomeFolderAclFix.ps1
 please overview all var's
 
-# you can add or remove each of them
+# to change the default ACL fix change the PSObject
 ```powershell
 # Default ACL are in top of the files
 .\Invoke-HomeFolderAclFix.ps1
