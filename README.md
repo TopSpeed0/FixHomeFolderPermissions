@@ -26,6 +26,12 @@ Before using the script, make sure you have the following prerequisites in place
 install-Module NTFSSecurity
 install-Module importExcel
 
+Download the repository and work form the Directory.
+you can Download the repository from: [link text](https://github.com/TopSpeed0/FixHomeFolderPermissions.git)
+
+ -or gh repo clone TopSpeed0/FixHomeFolderPermissions
+ -or git clone https://github.com/TopSpeed0/FixHomeFolderPermissions.git
+
 ## Usage
 To use the script, follow these steps:
 
