@@ -42,10 +42,14 @@ To use the script, follow these steps:
 2. Run the script using PowerShell.
 
 ## Customization
+
+in .\Invoke-HomeFolderAclFix.ps1
+please overview all var's
+
 # you can add or remove each of them
 ```powershell
-# Default ACL are in
-.\function\invoke-FixSystemACL
+# Default ACL are in top of the files
+.\Invoke-HomeFolderAclFix.ps1
     $systemACL = @(
         [PSCustomObject]@{name = "BUILTIN\Administrators"},
         [PSCustomObject]@{name = "CREATOR OWNER"},
