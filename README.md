@@ -2,4 +2,7 @@
 
 # install
 install-Module NTFSSecurity
-install-Module importExcel 
+install-Module importExcel
+
+# Recomanded
+Work with Powershell 7
