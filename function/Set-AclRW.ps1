@@ -4,7 +4,8 @@ function Set-AclRW {
         $path,
         $logDir,
         $user,
-        $domain
+        $domain,
+        $systemACL
     )
     $acls = get-NTFSAccess -Path $path
 
@@ -19,10 +20,10 @@ function Set-AclRW {
     invoke-FixUserACL -logDir "$logdir\$user.log" -domain $domain -path $path -AccessRights "FullControl" -user $user -acls $acls 
     
     # Add necessary system ACL
-    invoke-FixSystemACL -logDir "$logdir\$user.log" -domain $domain -path $path -AccessRights "FullControl" -user $user -acls $acls 
+    invoke-FixSystemACL -logDir "$logdir\$user.log" -domain $domain -path $path -AccessRights "FullControl" -user $user -acls $acls -systemACL $systemACL
     
     # Add necessary system ACL
-    Remove-RogeACL -logDir "$logdir\$user.log" -domain $domain -path $path -user $user -acls $acls -root $true
+    Remove-RogeACL -logDir "$logdir\$user.log" -domain $domain -path $path -user $user -acls $acls -root $true -systemACL $systemACL
 
     
     # loop # # enable Inheritance on all sub folders
@@ -35,7 +36,7 @@ function Set-AclRW {
 
         # Remove any roge ACL from the path
         $acls = get-NTFSAccess -Path $cpath
-        Remove-RogeACL -logDir "$logdir\$user.log" -domain $domain -path $cpath -user $user -acls $acls -root $false
+        Remove-RogeACL -logDir "$logdir\$user.log" -domain $domain -path $cpath -user $user -acls $acls -root $false -systemACL $systemACL
 
         # Enable NTFS Access Inheritance
         invoke-EnableAclIn -Path $cpath -logDir "$logdir\$user.log"

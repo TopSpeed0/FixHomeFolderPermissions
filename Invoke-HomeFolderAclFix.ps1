@@ -6,6 +6,13 @@ Import-Module NTFSSecurity
 Import-Module importExcel 
 Clear-Host
 
+$systemACL = @(
+    [PSCustomObject]@{name = "BUILTIN\Administrators"},
+    [PSCustomObject]@{name = "CREATOR OWNER"},
+    [PSCustomObject]@{name = "NT AUTHORITY\SYSTEM"},
+    [PSCustomObject]@{name = "$domain\$user"}
+)
+
 # home folder path
 $HomeFolderPath = "\\server\home"
 $homefolders = Get-ChildItem $HomeFolderPath
@@ -53,7 +60,8 @@ $scriptBlock = {
         $logDir,
         # for each homefolder a sprated log.
         $UserFolderLog,
-        $domain
+        $domain,
+        $systemACL
     )
     
     # Loading All Functions
@@ -78,7 +86,7 @@ $scriptBlock = {
     # Start Working on user
     try {
         write-host "Set-AclRW -path $Fullname -user $username -logDir $UserFolderLog -domain $domain logfile:$logDir"
-        $Rights = Set-AclRW -path $Fullname -user $username -logDir $UserFolderLog -domain $domain -ErrorAction
+        $Rights = Set-AclRW -path $Fullname -user $username -logDir $UserFolderLog -domain $domain -systemACL $systemACL
     }
     catch {
         $err_ = "$($_.Exception.Message)"
@@ -95,7 +103,7 @@ $jobs = @()
 foreach ( $user in $homefolders  ) {
     $Fullname = $user.FullName
     $username = $user.name
-    $job = Start-Job -ScriptBlock $scriptBlock -ArgumentList $CWD,$username,$Fullname,$logDir,$UserFolderLog,$domain
+    $job = Start-Job -ScriptBlock $scriptBlock -ArgumentList $CWD,$username,$Fullname,$logDir,$UserFolderLog,$domain,$systemACL
     $jobs += $job
 }
 

@@ -7,14 +7,10 @@ function Remove-RogeACL {
         [string]$domain,
         [string]$user,
         [bool]$root,
-        $acls
+        $acls,
+        $systemACL
     )
-    $systemACL = @(
-        [PSCustomObject]@{name = "BUILTIN\Administrators"},
-        [PSCustomObject]@{name = "CREATOR OWNER"},
-        [PSCustomObject]@{name = "NT AUTHORITY\SYSTEM"},
-        [PSCustomObject]@{name = "$domain\$user"}
-    )
+
     "ACLs:$acls found in path:$path" | Out-File $logDir -Append 
 
     $RemoveACL = $acls | ? { $_.Account.AccountName -notin $systemACL.name }

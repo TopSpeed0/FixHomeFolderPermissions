@@ -1,4 +1,4 @@
-function FunctionName {
+function Invoke-Report {
     param (
         $jobResults,
         $smtp,

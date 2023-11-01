@@ -31,14 +31,8 @@ function invoke-FixSystemACL {
         [string]$AccessRights,
         [string]$domain,
         [string]$user,
-        $acls
-    )
-
-    $systemACL = @(
-        [PSCustomObject]@{name = "BUILTIN\Administrators"},
-        [PSCustomObject]@{name = "CREATOR OWNER"},
-        [PSCustomObject]@{name = "NT AUTHORITY\SYSTEM"},
-        [PSCustomObject]@{name = "$domain\$user"}
+        $acls,
+        $systemACL
     )
 
     foreach ($system in $systemACL) {
