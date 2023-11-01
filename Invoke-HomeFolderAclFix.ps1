@@ -18,6 +18,7 @@ $smtp = "Server-IP"
 $subject = "FixACL: "
 $from = "FixACL@domain.com"
 $to = "xxx.xx@domain.com"
+#$to = email.txt # to add extra email address
 # mail Metadata
 $data = "<h2>last HomeFolderFix batch</h2>"
 $PostContent = "Attachments: Fix Windows Home Folder.xlsx "
