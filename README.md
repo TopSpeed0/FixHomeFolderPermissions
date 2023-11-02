@@ -5,7 +5,7 @@ Welcome to the documentation for the Home Folder Permission fixer script. This s
 ## Table of Contents
 - [Overview](#overview)
 - [Prerequisites](#prerequisites)
-- [Install](#install)
+- [Install](#Install)
 - [Usage](#usage)
 - [Customization](#customization)
 - [ParallelRunning](#ParallelRunning)
@@ -24,7 +24,7 @@ Before using the script, make sure you have the following prerequisites in place
 - NTFSSecurity
 - importExcel
 
-# install
+# Install
 install-Module NTFSSecurity
 install-Module importExcel
 
