@@ -75,19 +75,19 @@ work with the Script location as it use $CWD, please CD to the Correct folder or
 .\Invoke-HomeFolderAclFix.ps1
 ```
 ## Troubleshooting
-to Troubleshooting disable the Job and run the script outside of th script block
+To Troubleshooting disable the Job and run the script outside of th script block
 
 ## Contributing
-any help is Welcome
+Any help is Welcome
 
 ## License
 # Important Disclaimer
 
-**Usage at Your Own Risk:** Please note that the use of this script is entirely at your discretion and responsibility. While the script is designed to automate the process of managing home folder permissions, it is crucial to exercise caution when using it in a production environment.
+**Usage at Your Own Risk:** Please note that the use of this script is entirely at your discretion and responsibility. While the script is designed to automate the process of Managing home folder permissions, it is crucial to exercise caution when using it in a production environment.
 
-**Test Environment:** It is highly recommended to thoroughly review the script and test it in a controlled, non-production environment before applying it to your actual home folders. Running the script in a test environment helps identify any potential issues, ensures it aligns with your specific needs, and minimizes the risk of unintended consequences.
+**Test Environment:** It is highly recommended to thoroughly review the script and test it in a controlled, non-production environment before applying it to your actual home Folders. Running the script in a test environment helps identify any potential issues, ensures it aligns with your specific needs, and minimizes the risk of unintended consequences.
 
-**Variable Consideration:** Before applying this script in a production environment, carefully review and adjust variables like `$rootDirectory` and `$aclList` to match your organizational requirements. Failing to do so may lead to unintended consequences.
+**Variable Consideration:** Before applying this script in a production environment, carefully review and adjust variables like `$rootDirectory` and `$aclList` to match your Organizational requirements. Failing to do so may lead to unintended consequences.
 
 By using this script, you acknowledge that you understand and accept the risks associated with modifying permissions on file systems, and you are solely responsible for any outcomes that result from its usage. Always maintain backups and a recovery plan to address unforeseen issues.
 
